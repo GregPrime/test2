@@ -4,7 +4,7 @@ import collections
 photos = os.listdir('photo')
 photos_md5 = []
 for fname in photos:
-	photos_md5 = photos_md5 + [hashlib.md5(fname).hexdigest()]
+	photos_md5.append([hashlib.md5(fname).hexdigest()])
 print photos_md5
 for index in range(len(photos_md5)):
 	if photos_md5[index].count(l) == 1:
