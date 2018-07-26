@@ -12,7 +12,7 @@ print number_of_photo
 for i in number_of_photo:
 	dupes = ''
 	for j in number_of_photo:
-		if photos_md5[i] == photos_md5[j]:
+		if photos_md5[i] == photos_md5[j] and i != j:
 			dupes = dupes + photos[j]
 	if dupes == '':
 		dupes = 'None'
