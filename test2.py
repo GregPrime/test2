@@ -3,6 +3,7 @@ import hashlib
 import collections
 
 photos = os.listdir('photo')
+directory = os.getcwd()+'/photo'
 
 def md5(fname):
     hash_md5 = hashlib.md5()
@@ -13,7 +14,7 @@ def md5(fname):
 
 photos_md5 = []
 for f in photos:
-	photos_md5.append(md5(f))
+	photos_md5.append(md5(directory+f))
 number_of_photo = range(len(photos_md5))
 
 
