@@ -1,10 +1,19 @@
 import os
 import hashlib
 import collections
+
 photos = os.listdir('photo')
+
+def md5(fname):
+    hash_md5 = hashlib.md5()
+    with open(fname, "rb") as f:
+        for chunk in iter(lambda: f.read(4096), b""):
+            hash_md5.update(chunk)
+    return hash_md5.hexdigest()
+
 photos_md5 = []
-for fname in photos:
-	photos_md5.append([hashlib.md5(fname).hexdigest()])
+for f in photos:
+	photos_md5.append(md5(f))
 number_of_photo = range(len(photos_md5))
 
 
